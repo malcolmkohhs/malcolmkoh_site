@@ -1,33 +1,31 @@
-# Malcolm Koh — Personal Site
+# malcolmkoh.com — Version 2
 
-A simple static personal/research website for malcolmkoh.com.
+A static personal academic/research website for Malcolm Koh.
 
 ## Files
 - `index.html` — page content
-- `styles.css` — layout and visual design
-- `script.js` — tiny script for the footer year
+- `styles.css` — visual design and responsive layout
+- `script.js` — current year + subtle reveal animation
 
 ## Before publishing
-1. Replace `hello@malcolmkoh.com` in `index.html` if you do not use that email alias.
-2. Add your GitHub, CV, ORCID, or publication links when ready.
-3. Optionally add a PDF CV and link it from the navigation.
+1. Open `index.html` and replace `hello@malcolmkoh.com` if that alias is not active.
+2. Add the publication/DOI link once you want it public.
+3. Add GitHub only when you want to surface it.
+4. Remove the small setup note in the Contact section once the email is final.
 
-## Deploy on Cloudflare Pages
-
-### Simplest route: GitHub
-1. Create a new GitHub repository, e.g. `malcolmkoh-site`.
+## Cloudflare Pages
+### Option A — GitHub
+1. Create a GitHub repository, e.g. `malcolmkoh.com`.
 2. Upload these files to the repository root.
-3. In Cloudflare, go to **Workers & Pages → Create → Pages → Connect to Git**.
-4. Choose the repository.
-5. Because this is a static site, use no build command. Set the output directory to `/` if Cloudflare asks.
-6. Deploy.
-7. In the Pages project, open **Custom domains** and add `malcolmkoh.com`.
+3. Cloudflare Dashboard → Workers & Pages → Create → Pages → Connect to Git.
+4. Select the repository.
+5. Framework preset: None.
+6. Build command: leave blank.
+7. Build output directory: `/`.
+8. Deploy.
+9. In the Pages project, add the custom domain `malcolmkoh.com`.
 
-Cloudflare will guide the DNS setup because your domain is already on Cloudflare.
+### Option B — Direct upload
+Cloudflare Pages also supports direct upload of a static site. Upload the contents of this folder, then attach the custom domain.
 
-## Good next upgrades
-- `/cv` page or downloadable CV
-- `/research` page with publication DOI/link
-- `/projects` page for technical work
-- GitHub + ORCID links
-- small `now` page showing what you are currently learning or building
+No build step or package manager is required.
