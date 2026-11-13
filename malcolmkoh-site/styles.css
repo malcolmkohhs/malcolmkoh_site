@@ -1,0 +1,197 @@
+:root {
+  --bg: #f5f3ee;
+  --surface: #fbfaf7;
+  --text: #171717;
+  --muted: #6e6b65;
+  --line: #d8d4ca;
+  --accent: #2e5141;
+  --max-width: 1120px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "DM Sans", system-ui, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+.site-header {
+  width: min(calc(100% - 40px), var(--max-width));
+  margin: 0 auto;
+  min-height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  text-decoration: none;
+  font-family: "Newsreader", serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+nav { display: flex; gap: 24px; }
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.92rem;
+  transition: color 160ms ease;
+}
+nav a:hover { color: var(--text); }
+
+.section-wrap {
+  width: min(calc(100% - 40px), var(--max-width));
+  margin-inline: auto;
+}
+
+.hero {
+  min-height: 68vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 88px 0 96px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow,
+.section-number,
+.research-meta,
+.placeholder-label {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+h1, h2, h3 {
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(4rem, 11vw, 8rem);
+  line-height: 0.9;
+  margin: 20px 0 28px;
+}
+
+.hero-copy {
+  max-width: 760px;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  line-height: 1.5;
+  color: #383735;
+  margin: 0;
+}
+
+.hero-links { display: flex; gap: 12px; margin-top: 36px; }
+.button {
+  display: inline-flex;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.92rem;
+  border: 1px solid var(--text);
+  transition: transform 160ms ease, background 160ms ease, color 160ms ease;
+}
+.button:hover { transform: translateY(-2px); }
+.button.primary { background: var(--text); color: var(--bg); }
+.button.secondary { background: transparent; }
+
+.section-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  padding: 88px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+h2 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  margin-bottom: 0;
+}
+
+.section-content {
+  max-width: 720px;
+  font-size: 1.06rem;
+}
+.section-content p:first-child { margin-top: 0; }
+.section-content p { color: #3f3d39; }
+
+.research-card,
+.placeholder-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 30px;
+}
+
+.research-card h3,
+.placeholder-card h3 {
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  line-height: 1.15;
+  margin: 14px 0 16px;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+.tag-row span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 11px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 24px;
+}
+.contact-links a {
+  font-size: 1.3rem;
+  text-underline-offset: 4px;
+}
+.fine-print {
+  font-size: 0.8rem;
+  color: var(--muted) !important;
+  margin-top: 20px;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 28px 0 44px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 760px) {
+  .site-header { min-height: 72px; }
+  nav { gap: 14px; }
+  nav a:nth-child(2), nav a:nth-child(3) { display: none; }
+  .hero { min-height: auto; padding: 88px 0 72px; }
+  .section-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 64px 0;
+  }
+  .research-card, .placeholder-card { padding: 22px; }
+  .site-footer { flex-direction: column; gap: 4px; }
+}
